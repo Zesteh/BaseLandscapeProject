@@ -1,10 +1,9 @@
 #include "HelloWorldScene.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
-#include "cocostudio\CocoStudio.h"
 #include "SkiGame.h"
 #include "EndGame.h"
-// Includes required for Pseudo Random Numbers
+
 #include <cstdlib>
 #include <ctime>
 
@@ -38,11 +37,9 @@ bool HelloWorld::init()
 		return false;
 	}
 
-	// First, lets create our seed for the random number generator
-	srand(time(NULL));
-
 	auto rootNode = CSLoader::createNode("MainScene.csb");
-
+	
+	addChild(rootNode);
 
 	auto StartButton = rootNode->getChildByName<cocos2d::ui::Button*>("StartButton");
 	auto ExitButton = rootNode->getChildByName<cocos2d::ui::Button*>("ExitButton");

@@ -1,7 +1,7 @@
 #ifndef __SKI_GAME_H__
 #define __SKI_GAME_H__
-#include "EndGame.h"
-#include "HelloWorldScene.h"
+
+
 #include "cocos2d.h"
 #include "Obstacles.h"
 #include "ui/CocosGUI.h"
@@ -19,6 +19,9 @@ public:
     CREATE_FUNC(SkiGame);
 
 	void update(float) override;
+	int ShownScore;
+	int ShownLives;
+	int ShownSpeed;
 
 private:
 	cocos2d::Sprite* BG1;
@@ -27,14 +30,12 @@ private:
 	cocos2d::ui::Text* Lives;
 	cocos2d::ui::Text* Score;
 	cocos2d::ui::Text* Speed;
-	cocos2d::ui::Text* LosingDisplay;
+	
 	cocos2d::ui::Button* PauseButton;
 	bool jumpButtonTouched;
 	bool duckButtonTouched;
 	bool pauseButtonTouched;
-	int ShownScore;
-	int ShownLives;
-	int ShownSpeed;
+
 };
 
 #endif 

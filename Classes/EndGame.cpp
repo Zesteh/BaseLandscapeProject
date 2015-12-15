@@ -36,9 +36,9 @@ bool EndGame::init()
     auto rootNode = CSLoader::createNode("EndGame.csb");
 
     addChild(rootNode);
-
+	auto LosingDisplay = rootNode->getChildByName<cocos2d::ui::Text*>("Losing Display");
 	auto MenuButton = rootNode->getChildByName<cocos2d::ui::Button*>("MainButton");
-
+	//LosingDisplay->setString(StringUtils::format("%s %d", "Score:", ShownScore, "Speed:", ShownSpeed));
 	MenuButton->addTouchEventListener([&](Ref* sender, cocos2d::ui::Widget::TouchEventType Event)
 	{
 		if (Event == ui::Widget::TouchEventType::ENDED)

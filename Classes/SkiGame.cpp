@@ -1,10 +1,7 @@
 #include "SkiGame.h"
 #include "cocostudio/CocoStudio.h"
-#include "ui/CocosGUI.h"
 #include "EndGame.h"
-// Includes required for Pseudo Random Numbers
-#include <cstdlib>
-#include <ctime>
+#include "HelloWorldScene.h"
 
 
 USING_NS_CC;
@@ -114,7 +111,7 @@ bool SkiGame::init()
 			pauseButtonTouched = false;
 		}
 	});
-	//take you back to main menu
+	
 	
 
 	
@@ -142,7 +139,7 @@ void SkiGame::update(float variable)
 	{
 		Lives->setString(StringUtils::format("%s %d", "Lives:", ShownLives));
 		Score->setString(StringUtils::format("%s %d", "Score:", ShownScore));
-
+		Speed->setString(StringUtils::format("%s %d", "Speed:", ShownSpeed));
 		//Background Scrolling
 		//setting positions
 		BG1->setAnchorPoint(Vec2(0, 0));
@@ -162,6 +159,21 @@ void SkiGame::update(float variable)
 		else if (BG2->getPositionX() == -960)
 		{
 			BG2->setPosition(Vec2(960, 0));
+		}
+
+		Vec2 SkierPosition = Skier->getPosition();
+		auto SkierUp = MoveBy::create(1, Vec2(0, 100));
+		auto SkierDuck = MoveBy::create(1, Vec2(0, -100));
+
+		if (jumpButtonTouched == true)
+		{
+			Skier->runAction(SkierUp);
+			Skier->runAction(SkierDuck);
+		}
+		if (duckButtonTouched == true)
+		{
+			Skier->runAction(SkierDuck);
+			Skier->runAction(SkierUp);
 		}
 
 		//boulders and birds movement
