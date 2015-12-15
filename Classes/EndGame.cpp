@@ -39,14 +39,14 @@ bool EndGame::init()
 
 	auto MenuButton = rootNode->getChildByName<cocos2d::ui::Button*>("MainButton");
 
-	backButton->addTouchEventListener([&](Ref* sender, cocos2d::ui::widget::TouchEventType Event))
+	MenuButton->addTouchEventListener([&](Ref* sender, cocos2d::ui::Widget::TouchEventType Event)
 	{
 		if (Event == ui::Widget::TouchEventType::ENDED)
 		{
-			autoscene = HelloWorld::createScene();
-			director::getInstance()->replaceScene(scene)
+			auto scene = HelloWorld::createScene();
+			Director::getInstance()->replaceScene(scene);
 		}
-	}
+	});
 
     return true;
 }
