@@ -1,11 +1,11 @@
 #include "Obstacles.h"
 
 
-Obstacles::Obstacles()
+Obstacle::Obstacle()
 {
 }
 
 
-Obstacles::~Obstacles()
+Obstacle::~Obstacle()
 {
 }

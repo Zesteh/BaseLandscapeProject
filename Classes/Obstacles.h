@@ -2,18 +2,21 @@
 #include "cocos2d.h"
 using  namespace cocos2d;
 
-class Obstacles
+struct
+{
+	float x;
+	float y;
+};
+class Obstacle
 {
 public:
-	Obstacles();
-	~Obstacles();
+	Obstacle();
+	~Obstacle();
 	Sprite* init(int);
 	void spawn();
 	bool move(float);
 	void despawn();
-	void setspeed(float);
-	bool isspawned();
-	Vec2 getPos();
+	Vec2 position();
 
 private:
 	float speed;

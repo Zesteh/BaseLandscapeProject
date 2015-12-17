@@ -3,6 +3,7 @@
 #include "ui/CocosGUI.h"
 #include "EndGame.h"
 
+
 USING_NS_CC;
 
 using namespace cocostudio::timeline;
@@ -14,6 +15,7 @@ Scene* EndGame::createScene()
     
     // 'layer' is an autorelease object
     auto layer = EndGame::create();
+	
 
     // add layer as a child to scene
     scene->addChild(layer);
@@ -32,22 +34,24 @@ bool EndGame::init()
         return false;
     }
 
-	
     auto rootNode = CSLoader::createNode("EndGame.csb");
 
     addChild(rootNode);
-	auto LosingDisplay = rootNode->getChildByName<cocos2d::ui::Text*>("Losing Display");
-	auto MenuButton = rootNode->getChildByName<cocos2d::ui::Button*>("MainButton");
-	//LosingDisplay->setString(StringUtils::format("%s %d", "Score:", ShownScore, "Speed:", ShownSpeed));
-	MenuButton->addTouchEventListener([&](Ref* sender, cocos2d::ui::Widget::TouchEventType Event)
+
+
+
+	auto LosingDisplay = rootNode->getChildByName<cocos2d::ui::Text*>("LosingDisplay");
+	auto MenuButton = rootNode->getChildByName<cocos2d::ui::Button*>("MenuButton");
+	
+	MenuButton->addTouchEventListener([&](Ref* sender, cocos2d::ui::Widget::TouchEventType pressed)
 	{
-		if (Event == ui::Widget::TouchEventType::ENDED)
+		if (pressed == ui::Widget::TouchEventType::ENDED)
 		{
 			auto scene = HelloWorld::createScene();
 			Director::getInstance()->replaceScene(scene);
 		}
 	});
-
+	LosingDisplay->setString(StringUtils::format("%s %d", "Score:", ShownScore));
     return true;
 }
 

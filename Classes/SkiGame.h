@@ -1,12 +1,12 @@
 #ifndef __SKI_GAME_H__
 #define __SKI_GAME_H__
 
-
+#include "cocostudio/CocoStudio.h"
 #include "cocos2d.h"
-#include "Obstacles.h"
 #include "ui/CocosGUI.h"
 
 class SkiGame : public cocos2d::Layer
+
 {
 public:
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
@@ -22,8 +22,10 @@ public:
 	int ShownScore;
 	int ShownLives;
 	int ShownSpeed;
-
+	bool collisions(cocos2d::Sprite*, cocos2d::Sprite*);
 private:
+	cocos2d::Sprite* Boulder;
+	cocos2d::Sprite* Birdie;
 	cocos2d::Sprite* BG1;
 	cocos2d::Sprite* BG2;
 	cocos2d::Sprite* Skier;
@@ -35,7 +37,6 @@ private:
 	bool jumpButtonTouched;
 	bool duckButtonTouched;
 	bool pauseButtonTouched;
-
 };
 
 #endif 

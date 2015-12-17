@@ -57,7 +57,7 @@ bool HelloWorld::init()
 	{
 		if (Event == ui::Widget::TouchEventType::ENDED)
 		{
-			CCDirector::sharedDirector()->end();
+			CCDirector::getInstance()->end();
 		}
 	});
 
