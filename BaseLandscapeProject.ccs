@@ -1,10 +1,32 @@
 <Solution>
-  <PropertyGroup Name="BaseLandscapeProject" Version="2.3.2.3" Type="CocosStudio" />
+  <PropertyGroup Name="BASELA~1" Version="2.3.2.3" Type="CocosStudio" />
   <SolutionFolder>
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
-        <Project Name="MainScene.csd" Type="Scene" />
         <Image Name="HelloWorld.png" />
+        <Image Name="SnowSlope.png" />
+        <Image Name="bird sprite.png" />
+        <Image Name="Boulder.png" />
+        <Image Name="downButton.png" />
+        <Image Name="DownButtonPressed.png" />
+        <Image Name="JumpButton.png" />
+        <Image Name="JumpButtonPressed.png" />
+        <Image Name="snowball.png" />
+        <Image Name="GameOver.png" />
+        <Image Name="StartScreen.png" />
+        <Project Name="EndGame.csd" Type="Scene" />
+        <Project Name="SkiGame.csd" Type="Scene" />
+        <Project Name="MainScene.csd" Type="Scene" />
+        <Image Name="Skier.png" />
+        <Image Name="BG2.png" />
+        <Image Name="BG1.png" />
+        <PlistParticleFile Name="snowy.plist" />
+        <Image Name="exitpressed.png" />
+        <Image Name="mainmenu.png" />
+        <Image Name="mainmenupressed.png" />
+        <Image Name="start.png" />
+        <Image Name="startpressed.png" />
+        <Image Name="exit.png" />
       </RootFolder>
     </Group>
   </SolutionFolder>
